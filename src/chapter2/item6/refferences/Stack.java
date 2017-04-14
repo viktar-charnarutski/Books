@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.EmptyStackException;
 
 /**
- * Simple stack implementation.
+ * 2.
  *
  * A memory leak could be by {@code pop} method if poped object, which could has an obsolete reference, was not
  * nullified.
