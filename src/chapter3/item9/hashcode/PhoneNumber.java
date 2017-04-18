@@ -57,7 +57,7 @@ public final class PhoneNumber {
     @Override
     public int hashCode() {
         if (hashCode == null) {
-            hashCode = new Integer(17);
+            hashCode = 17;
             hashCode = 32 * areaCode + hashCode;
             hashCode = 32 * prefix + hashCode;
             hashCode = 32 * lineNumber + hashCode;
