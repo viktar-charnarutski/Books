@@ -2,21 +2,21 @@ package chapter3.item9.hashcode;
 
 /**
  * Simple hashCode overriding with lazy initialization.
- *
- * Rules:
+ * <p>
+ * Rules for hashCode overriding:
  * <ul>
- *     <li>
- *         Always override {@code hashCode} if you have {@code equals} overriden;
- *     </li>
- *     <li>
- *         Equal objects must have equal hash codes;
- *     </li>
- *     <li>
- *         Equal objects must have equal hash codes;
- *     </li>
- *     <li>
- *         Each significant field has to be part of hash code computation;
- *     </li>
+ * <li>Always override {@code hashCode} if you have {@code equals} overridden;</li>
+ * <li>Equal objects must have equal hash codes;</li>
+ * <li>Equal objects must have equal hash codes;</li>
+ * <li>Each significant field has to be part of hash code computation;</li>
+ * </ul>
+ * <p>
+ * Rules for toString overriding:
+ * <ul>
+ * <li>Always override {@code toString};</li>
+ * <li>{@code toString} should return all of the interesting information contained in the object to provide
+ * an ability to reconstruct the object from the output;</li>
+ * <li>It should be properly documented.</li>
  * </ul>
  */
 public final class PhoneNumber {
@@ -63,5 +63,23 @@ public final class PhoneNumber {
             hashCode = 32 * lineNumber + hashCode;
         }
         return hashCode;
+    }
+
+    /**
+     * Returns the string representation of this phone number.
+     * The string consists of fourteen characters whose format is "(XXX) YYY-ZZZZ",
+     * where XXX is the area code, YYY is the prefix, and ZZZZ is the line number.
+     * (Each of the capital letters represents a single decimal digit.)
+     * <p>
+     * If any of the tree parts of this phone number is too small to fill up it's fields,
+     * the field is padded with leading zeros. For example, if the value of the line number
+     * is 123, the last four characters of the string representation will be "0123".
+     * <p>
+     * Note that there is a single space separating the closing parenthesis after the area
+     * code after the area code from the first digit of the prefix.
+     */
+    @Override
+    public String toString() {
+        return String.format("(%03d) %03d-%04d", areaCode, prefix, lineNumber);
     }
 }
