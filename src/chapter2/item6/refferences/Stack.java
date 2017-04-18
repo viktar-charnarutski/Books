@@ -5,7 +5,7 @@ import java.util.EmptyStackException;
 
 /**
  * 2.
- *
+ * <p>
  * A memory leak could be by {@code pop} method if poped object, which could has an obsolete reference, was not
  * nullified.
  */
@@ -35,6 +35,17 @@ public class Stack {
     private void ensureCapacity() {
         if (size == INITIAL_CAPACITY) {
             stack = Arrays.copyOf(stack, size * 2 + 1);
+        }
+    }
+
+    @Override
+    protected Stack clone() {
+        try {
+            Stack result = (Stack) super.clone();
+            result.stack = stack.clone();
+            return result;
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError();
         }
     }
 }

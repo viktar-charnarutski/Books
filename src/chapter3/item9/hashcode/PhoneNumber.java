@@ -82,4 +82,13 @@ public final class PhoneNumber {
     public String toString() {
         return String.format("(%03d) %03d-%04d", areaCode, prefix, lineNumber);
     }
+
+    @Override
+    protected PhoneNumber clone() {
+        try {
+            return (PhoneNumber) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new AssertionError(); // can't happen
+        }
+    }
 }
