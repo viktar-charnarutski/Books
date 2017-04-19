@@ -19,7 +19,7 @@ package chapter3.item9.hashcode;
  * <li>It should be properly documented.</li>
  * </ul>
  */
-public final class PhoneNumber {
+public final class PhoneNumber implements Comparable<PhoneNumber> {
     private final short areaCode;
     private final short prefix;
     private final short lineNumber;
@@ -90,5 +90,35 @@ public final class PhoneNumber {
         } catch (CloneNotSupportedException e) {
             throw new AssertionError(); // can't happen
         }
+    }
+
+    @Override
+    public int compareTo(PhoneNumber pn) {
+        // compare area code
+        if (pn.areaCode < areaCode) {
+            return -1;
+        }
+        if (pn.areaCode > areaCode) {
+            return 1;
+        }
+
+        // area code is equal, compare prefix
+        if (pn.prefix < prefix) {
+            return -1;
+        }
+        if (pn.prefix > prefix) {
+            return 1;
+        }
+
+        // area code and prefix are equal, compare line number
+        if (pn.lineNumber < lineNumber) {
+            return -1;
+        }
+        if (pn.lineNumber > lineNumber) {
+            return 1;
+        }
+
+        // all fields are equal
+        return 0;
     }
 }
