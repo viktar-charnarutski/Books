@@ -1,7 +1,7 @@
 package chapter4.item15.mutability;
 
 /**
- * Minimize mutability.
+ * Immutable class with a static factory instead of constructor.
  * <p>
  * Rules to make a class immutable:
  * <ul>
@@ -12,13 +12,17 @@ package chapter4.item15.mutability;
  * <li>Ensure exclusive access to any mutable components.</li>
  * </ul>
  */
-public final class Complex {
+public class Complex {
     private final double re;
     private final double im;
 
-    public Complex(double re, double im) {
+    private Complex(double re, double im) {
         this.re = re;
         this.im = im;
+    }
+
+    public static Complex valueOf(double re, double im) {
+        return new Complex(re, im);
     }
 
     // accessors with no corresponding mutators
