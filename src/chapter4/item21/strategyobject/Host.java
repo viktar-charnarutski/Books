@@ -17,6 +17,6 @@ public class Host {
         }
 
         // returned comparator is serializable
-        public static Comparator<String> STRINGS_LENGTH_COMPARATOR = new StrLenCmp();
+        public static final Comparator<String> STRINGS_LENGTH_COMPARATOR = new StrLenCmp();
     }
 }
