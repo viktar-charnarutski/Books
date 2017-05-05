@@ -25,7 +25,7 @@ public class Stack<E> {
         stack[size] = obj;
     }
 
-    public Object pop() {
+    public E pop() {
         if (size == 0) {
             throw new EmptyStackException();
         }
