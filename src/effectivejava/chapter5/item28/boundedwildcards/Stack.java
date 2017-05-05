@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.EmptyStackException;
 
 /**
- * Generified Stack.
+ * Use bounded wildcards to increase API flexibility.
  */
 public class Stack<E> {
 
