@@ -5,6 +5,8 @@ import java.util.Set;
 
 /**
  * Use bounded wildcards to increase API flexibility.
+ * See the union method below.
+ * PECS mnemonic stands for: producer - extends, consumer - super.
  */
 public class SetHelper {
     public static <E> Set<E> union(Set<? extends E> set1, Set<? extends E> set2) {

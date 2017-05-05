@@ -6,6 +6,8 @@ import java.util.EmptyStackException;
 
 /**
  * Use bounded wildcards to increase API flexibility.
+ * See pushAll and popAll methods below.
+ * PECS mnemonic stands for: producer - extends, consumer - super.
  */
 public class Stack<E> {
 
