@@ -29,6 +29,11 @@ public class MySet<E> extends AbstractSet<E> {
         public E next() {
             return null;
         }
+
+        @Override
+        public void remove() {
+
+        }
     }
 
     @Override
