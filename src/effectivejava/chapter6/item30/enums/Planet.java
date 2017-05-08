@@ -11,7 +11,7 @@ public enum Planet {
     JUPITER(1.899E+27, 7.149E7),
     SATURN(5.685E+26, 6.027E7),
     URANUS(8.683E+25, 2.556E7),
-    NEPTUN(1.024E+26, 2.477E7);
+    NEPTUNE(1.024E+26, 2.477E7);
 
     private final double mass; // in kilos
     private final double radius; // in meters
