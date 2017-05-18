@@ -1,4 +1,4 @@
-package effectivejava.effectivejava.chapter10.item66.synchronizedaccess;
+package effectivejava.chapter10.item66.synchronizedaccess;
 
 import java.util.concurrent.TimeUnit;
 
