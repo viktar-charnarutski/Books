@@ -1,4 +1,4 @@
-package effectivejava.effectivejava.chapter7.item42.varargs;
+package effectivejava.varargs;
 
 /**
  * Use varargs judiciously.
