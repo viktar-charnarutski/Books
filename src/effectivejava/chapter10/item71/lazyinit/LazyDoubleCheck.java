@@ -8,6 +8,7 @@ public class LazyDoubleCheck {
     private volatile FieldType field;
 
     FieldType getField() {
+        // to ensure that field is read only once it's already initialized
         FieldType result = field;
         if (result == null) { // first check without locking
             synchronized (this) {
