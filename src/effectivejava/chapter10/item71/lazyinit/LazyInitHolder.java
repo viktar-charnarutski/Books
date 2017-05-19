@@ -5,14 +5,14 @@ package effectivejava.chapter10.item71.lazyinit;
  */
 public class LazyInitHolder {
     private static class FieldHolder {
-        static final Integer field = computeFieldValue();
+        static final FieldType field = computeFieldValue();
     }
 
-    static Integer getField() {
+    static FieldType getField() {
         return FieldHolder.field;
     }
 
-    private static Integer computeFieldValue() {
-        return 42;
+    private static FieldType computeFieldValue() {
+        return new FieldType();
     }
 }
